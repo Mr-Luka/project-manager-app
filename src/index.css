@@ -1,0 +1,317 @@
+body{ 
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+}
+
+.projects-wrapper {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 120vh;
+    overflow: hidden;
+}
+
+.add-projects {
+    color: rgb(226, 226, 226);
+    background-color: black;
+    border-top-right-radius: 20px;
+    padding: 5rem 7rem 15rem 3rem;
+    margin-right: 3rem;
+    height: 50vh;
+}
+
+.add-projects button {
+    margin-top: 2rem;
+    background-color: rgb(33, 33, 33);
+    color: rgb(152, 152, 152);
+    border: none;
+    font-size: 1.1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 5px;
+}
+
+.add-projects button:hover{
+    cursor: pointer;
+    background-color: rgb(51, 51, 51);
+}
+
+.saved-projects{
+    font-size: 1.1rem;
+    margin-top: 3rem;
+    margin-bottom: 0; 
+    width: 120%; 
+    max-height: 30vh; 
+}
+
+.ol-saved-projects {
+    margin: 0 0 0 0;
+    padding-left: 0;
+    width: 100%;
+
+}
+
+.ol-saved-projects li {
+    text-align: left;
+    list-style: none;
+    padding: 0.5rem;
+    color: rgb(168, 168, 168);
+    width: 110%;
+    
+}
+
+.ol-saved-projects li:hover {
+    background-color: rgba(68, 68, 68, 0.201);
+    border-radius: 5px;
+    color: white;
+}
+
+.no-project-selected{
+    margin-bottom: 13rem;
+    margin-left: 10%;
+    margin-right: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(226, 226, 226);
+    
+}
+
+.hidden {
+    display: none;
+}
+
+img {
+    width: 5rem;
+}
+
+.no-project-selected h3 {
+    font-size: 1.5rem;
+    color: rgb(102, 101, 101);
+    margin-bottom: 0.3rem;
+}
+
+.no-project-selected p {
+    font-size: 1.2rem;
+    color:rgb(148, 147, 147)
+}
+
+.no-project-selected button {
+    background-color: rgb(68, 68, 68);
+    color: rgb(167, 167, 167);
+    border: none;
+    font-size: 1.1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.no-project-selected button:hover {
+    color: black;
+    background-color: transparent;
+    border: 1px solid rgb(68, 68, 68);
+    cursor: pointer;
+    box-shadow: 5px 10px 15px rgb(239, 226, 168);
+
+}
+
+.projects-form {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    width: 40%;
+    margin: 0 0 12rem 0;
+}
+
+
+.cancel-save{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cancel-save button{
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    padding: 1.1rem 1.3rem;
+    border-radius: 10px;
+}
+
+.cancel-save button:nth-child(1){
+    margin-right: 1rem;
+    color: black;
+}
+
+.cancel-save button:nth-child(1):hover {
+    border: 1px solid black;
+}
+.cancel-save button:nth-child(2){
+    background-color: black;
+    color: white;
+}
+
+.cancel-save button:nth-child(2):hover {
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    margin: 1.5rem 0 0.4rem 0;
+}
+
+input, textarea {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(223, 223, 223);
+    font-size: 1.3rem;
+    padding: 0.5rem 0.5rem;
+    color:rgb(84, 84, 84);
+    font-weight: 400;
+    border-bottom: 1px solid rgb(168, 168, 168);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(120, 120, 120);
+}
+
+
+
+/* Project info */
+
+
+
+.project{
+    height: 50vh;
+    margin-bottom: 10rem;
+    width: 40%;
+}
+
+.title-and-button{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.title-and-button button {
+    border: none;
+    padding: 0rem 1rem;
+    font-size: 1.1rem;
+    color:rgb(79, 79, 79);
+    font-weight: 550;
+    background-color: transparent;
+}
+.project p:nth-child(2){
+    color:rgb(120, 120, 120);
+    margin: 0 0 2rem 0;
+    padding: 0;
+}
+
+.project p:nth-child(3){
+    font-size: 1.1rem;
+}
+
+.project h2{
+    font-size: 2rem;
+}
+
+
+.tasks input{
+    margin-right: 0rem;
+    width: 50%;
+    padding: 0.4rem 1rem
+}
+
+.tasks button {
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    padding: 1rem 1.3rem;
+}
+.tasks button:hover,
+.title-and-button button:hover {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgb(239, 226, 168);
+}
+
+.project ol{
+    list-style: none;
+    margin-left: 0;
+    padding: 1rem 1rem;
+}
+.project ol li {
+    font-size: 1.2rem;
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.tasks-ol {
+    border-radius: 5px;
+    margin-top: 2rem;
+    overflow-y: auto;
+    max-height: 250px;
+}
+
+.active-tasks {
+    background-color: rgba(68, 68, 68, 0.082);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f0f0f000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  border: 1px solid rgb(190, 189, 189);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(127, 201, 205);
+}
+
+::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+
+.tasks-ol li button {
+    border: none;
+    font-size: 1.1rem;
+}
+
+.tasks-ol li button:hover {
+    background-color: rgba(117, 117, 117, 0.325);
+    border-radius: 5px;
+    color: white;
+}
+
+.tasks-ol li p {
+    margin: 0;
+    padding: 0.5rem;
+}
+
