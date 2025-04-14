@@ -10,11 +10,48 @@ import AddProject from './assets/components/AddProject';
 
 function App() {
   const [createProjectButton, setCreateProjectButton] = useState(false);
+  const [projects, setProjects] = useState([]);
+  const [formData, setFormData] = useState({
+    title: '',
+    description: '',
+    dueDate: '',
+  });
 
   function handleCreateProject(){
     setCreateProjectButton(true);
   }
 
+
+
+  function handleInput(e){
+    const {name, value} = e.target;
+    setFormData(prevData => {
+      return {
+        ...prevData,
+        [name]: value
+      }
+    });
+  }
+
+  function handleSubmit(e){
+    e.preventDefault();
+    setProjects(prevProject => {
+      const newProjectsArray = [
+        ...prevProject,
+        {
+          title: formData.title,
+          description: formData.description,
+          dueDate: formData.dueDate,
+        }
+      ];
+      return newProjectsArray;
+    });
+    console.log(projects)
+  }
+
+  function cancelForm(){
+    setCreateProjectButton(false);
+  }
 
   return (
     <>
@@ -29,7 +66,11 @@ function App() {
           </div>
         </div>
         {createProjectButton ? 
-         <AddProject />
+         <AddProject 
+          input={handleInput}
+          submitForm={handleSubmit}
+          cancel={cancelForm}
+         />
          : 
          <NoProjectSelected 
             createNewProject={handleCreateProject}
