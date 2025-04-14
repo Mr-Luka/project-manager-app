@@ -68,6 +68,7 @@ body{
     background-color: rgba(68, 68, 68, 0.201);
     border-radius: 5px;
     color: white;
+    cursor: pointer;
 }
 
 .no-project-selected{

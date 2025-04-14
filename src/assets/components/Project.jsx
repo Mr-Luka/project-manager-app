@@ -1,15 +1,16 @@
+import { convertDate } from '../utils/convertDate.js';
 
-
-export default function Project(){
+export default function Project({title, description, date}){
+  const convertedDate = convertDate(date);
  
     return (
         <div className='project'>
           <div className='title-and-button'>
-            <h1>Title</h1>
+            <h1>{title}</h1>
             <button>Delete</button>
           </div>
-          <p>Date</p>
-          <p>Description</p>
+          <p>{convertedDate}</p>
+          <p>{description}</p>
           <hr></hr>
           <h2>Tasks</h2>
           <form>
