@@ -6,10 +6,12 @@ import { v4 as uuidv4 } from 'uuid'; //Importing a UUID generator
 
 import NoProjectSelected from './assets/components/NoProjectSelected';
 import AddProject from './assets/components/AddProject';
+import Project from './assets/components/Project.jsx';
 
 
 function App() {
   const [createProjectButton, setCreateProjectButton] = useState(false);
+  const [projectClicked, setProjectClicked] = useState(false);
   const [projects, setProjects] = useState([]);
   const [formData, setFormData] = useState({
     title: '',
@@ -19,6 +21,10 @@ function App() {
 
   function handleCreateProject(){
     setCreateProjectButton(true);
+  }
+
+  function handleProjectClicked(){
+    setProjectClicked(true);
   }
 
 
@@ -39,6 +45,7 @@ function App() {
       const newProjectsArray = [
         ...prevProject,
         {
+          id: uuidv4(),
           title: formData.title,
           description: formData.description,
           dueDate: formData.dueDate,
@@ -46,6 +53,7 @@ function App() {
       ];
       return newProjectsArray;
     });
+    setCreateProjectButton(false);
     console.log(projects)
   }
 
@@ -61,20 +69,25 @@ function App() {
           <button onClick={handleCreateProject}>+ Add Project</button>
           <div className='saved-projects'>
             <ol className='ol-saved-projects'>
-    
+                {projects.map(project =>
+                <li key={project.id} onClick={handleProjectClicked}>{project.title}</li>)}
             </ol>
           </div>
         </div>
         {createProjectButton ? 
-         <AddProject 
+         (<AddProject 
           input={handleInput}
           submitForm={handleSubmit}
           cancel={cancelForm}
-         />
-         : 
-         <NoProjectSelected 
+         />)
+         : projectClicked ?
+          ( <Project
+            
+          />)
+         :
+          (<NoProjectSelected 
             createNewProject={handleCreateProject}
-          />
+          />)
         }
 
 
