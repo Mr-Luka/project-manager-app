@@ -36,6 +36,7 @@ function App() {
     })
   }
 
+  // function that will handle the submit form 
   function handleSubmitForm(e){
     e.preventDefault();
     setFormData(prevData=> {
