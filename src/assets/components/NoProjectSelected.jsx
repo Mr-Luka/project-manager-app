@@ -1,5 +1,5 @@
 import noteBookImage from '../no-projects.png';
-
+// when there are no projects
 export default function NoProjectSelected({createProject}){
 
     return (
